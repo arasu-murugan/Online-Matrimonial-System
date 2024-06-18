@@ -1,0 +1,109 @@
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  
+  border-radius: 8px;
+}
+
+.form-section, .profiles-section {
+  flex: 1;
+  margin: 10px;
+}
+
+h1, h2 {
+  color: #007bff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.profiles-section {
+  margin-left: 20px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid lightsteelblue;
+  border-radius: 8px;
+  background-color: lightsteelblue;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.profile-details {
+  text-align: center;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.profile-details button {
+  margin-top: 10px;
+}
+
+.text {
+  line-height: 20px;
+  padding: 40px;
+  
+  border-radius: 10px;
+  box-shadow: 0 4px 8px black;
+}
+
+.success-message {
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 50px;
+  font-size: large;
+  font-style: italic;
+}
+.welcome-heading {
+  text-align: center;
+}
+.img {
+  background-image: url('../../../assets/last.jpg');
+  background-color: lightsalmon;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  
+}

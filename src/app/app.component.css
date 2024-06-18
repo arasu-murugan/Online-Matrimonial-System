@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    border-bottom: 1px solid lightgoldenrodyellow;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  nav a.active-link {
+    border-bottom: 2px solid #007bff;
+  }
+  
+  nav a:hover {
+    color: #0056b3;
+  }
+  

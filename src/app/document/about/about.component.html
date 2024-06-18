@@ -1,0 +1,159 @@
+
+<div class="text">
+  <div class="welcome-heading">
+    <h2 style="color: brown;">Welcome to Online Matrimonial</h2>
+  </div>
+  <div class="img">
+
+  <p style="color:red">Perfect matrimonial site for a perfect match</p>
+  <p style="color:black">
+    Matrimony have helped lakhs of people find their perfect partner and perfect families. Because at Matrimony, we believe that a marriage is not about just two persons but about two families too. Matrimonial.com helps you find your right partner and family who match your community, interests and preferences through its personalized search assistance. Millions of families have found each other on Online Matrimony. Find yours.
+  </p>
+
+  <div class="about-container">
+    <div class="form-section">
+      <h1>About</h1>
+      <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            required
+            [(ngModel)]="name"
+            name="name"
+            class="form-control"
+            #nameInput="ngModel"
+          />
+          <div *ngIf="nameInput.invalid && nameInput.touched" class="error-message">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="searchFor">Search for:</label>
+          <select
+            id="searchFor"
+            required
+            [(ngModel)]="searchFor"
+            name="searchFor"
+            class="form-control"
+            #searchForInput="ngModel"
+          >
+            <option value="Bride">Bride</option>
+            <option value="Groom">Groom</option>
+          </select>
+          <div *ngIf="searchForInput.invalid && searchForInput.touched" class="error-message">
+            Search for is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            min="21"
+            required
+            [(ngModel)]="age"
+            name="age"
+            class="form-control"
+            #ageInput="ngModel"
+          />
+          <div *ngIf="ageInput.invalid && ageInput.touched" class="error-message">
+            Age is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="religion">Religion:</label>
+          <select
+            id="religion"
+            required
+            [(ngModel)]="religion"
+            name="religion"
+            class="form-control"
+            #religionInput="ngModel"
+          >
+            <option value="Hindu">Hindu</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Christian">Christian</option>
+          </select>
+          <div *ngIf="religionInput.invalid && religionInput.touched" class="error-message">
+            Religion is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="motherTongue">Mother Tongue:</label>
+          <select
+            id="motherTongue"
+            required
+            [(ngModel)]="motherTongue"
+            name="motherTongue"
+            class="form-control"
+            #motherTongueInput="ngModel"
+          >
+            <option value="Tamil">Tamil</option>
+            <option value="Hindi">Hindi</option>
+            <option value="English">English</option>
+          </select>
+          <div *ngIf="motherTongueInput.invalid && motherTongueInput.touched" class="error-message">
+            Mother Tongue is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input
+            type="text"
+            id="country"
+            required
+            [(ngModel)]="country"
+            name="country"
+            class="form-control"
+            value="Indian"
+            readonly
+            #countryInput="ngModel"
+          />
+          <div *ngIf="countryInput.invalid && countryInput.touched" class="error-message">
+            Country is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number:</label>
+          <input
+            type="tel"
+            id="mobileNumber"
+            pattern="[0-9]{10}"
+            required
+            [(ngModel)]="mobileNumber"
+            name="mobileNumber"
+            class="form-control"
+            #mobileNumberInput="ngModel"
+          />
+          <div *ngIf="mobileNumberInput.invalid && mobileNumberInput.touched" class="error-message">
+            Mobile Number is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <div *ngIf="submitted" class="success-message">
+          <p>Successfully Submitted!</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="profiles-section">
+      <h2>Profiles</h2>
+      <div class="profile-grid">
+        <div class="profile" *ngFor="let profile of profiles">
+          <img [src]="profile.image" alt="Profile Picture" class="profile-pic" />
+          <div class="profile-details">
+            <p><strong>Name:</strong> {{ profile.name }}</p>
+            <p><strong>Profile ID:</strong> {{ profile.id }}</p>
+            <p><strong>Age:</strong> {{ profile.age }}</p>
+            <p><strong>Religion:</strong> {{ profile.religion }}</p>
+            <p><strong>Location:</strong> {{ profile.location }}</p>
+            <button class="btn btn-primary" (click)="expressInterest()">Express Interest</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
